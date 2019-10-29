@@ -1,0 +1,47 @@
+title: Trip
+type: object
+properties:
+  uuid:
+    type: string
+    format: uuid
+  friendlyId:
+    type: string
+  permits:
+    type: array
+    items:
+      type: string
+  fisheries:
+    type: array
+    items:
+      type: string
+  vessel:
+    type: object
+    properties:
+      vesselName:
+        type: string
+      vesselNum:
+        type: string
+  captain:
+    type: string
+  departureDate:
+    type: string
+    format: date-time
+  departurePort:
+    type: string
+  returnDate:
+    type: string
+  returnPort:
+    type: string
+  createdBy:
+    type: string
+    format: email
+  createdDate:
+    type: string
+    format: date-time
+  updatedBy:
+    type: string
+    format: email
+  updatedDate:
+    type: string
+    format: date-time
+description: a unique trip

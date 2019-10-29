@@ -9,6 +9,119 @@ info:
     url: 'https://www.nwfsc.noaa.gov/'
 servers:
   - url: 'http://localhost:3000'
-paths: {}
+paths:
+  /trips:
+    get:
+      summary: trips
+      tags:
+        - trips
+        - trip
+      description: list all trips
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/trip.v1.yaml
+              examples: {}
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      operationId: getTrips
+    post:
+      summary: ''
+      tags:
+        - trip
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/trip.v1.yaml
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/trip.v1.yaml
+        description: ''
+      description: create a new trip
+      operationId: createTrip
+  '/trips/{tripId}':
+    parameters: []
+    get:
+      summary: 'trips/{tripId}'
+      tags:
+        - trip
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/trip.v1.yaml
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      description: get a specific trip
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      operationId: getTrip
+      parameters:
+        - schema:
+            type: number
+          name: tripId
+          in: path
+          required: true
+    put:
+      summary: ''
+      tags:
+        - trip
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/trip.v1.yaml
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      description: edit a trip
+      operationId: editTrip
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/trip.v1.yaml
+        description: updated trip
 components:
   schemas: {}
+  securitySchemes: {}
