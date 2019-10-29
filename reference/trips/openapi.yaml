@@ -87,6 +87,12 @@ paths:
                 $ref: ./models/trip.v1.yaml
       description: edit a trip
       operationId: editTrip
+      parameters:
+        - schema:
+            type: number
+          name: tripId
+          in: path
+          required: true
       requestBody:
         content:
           application/json:
