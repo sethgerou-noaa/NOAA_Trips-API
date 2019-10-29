@@ -48,7 +48,12 @@ paths:
       tags:
         - trips
   '/trips/{tripId}':
-    parameters: []
+    parameters:
+      - schema:
+          type: string
+        name: tripId
+        in: path
+        required: true
     get:
       summary: 'trips/{tripId}'
       responses:
@@ -66,5 +71,23 @@ paths:
           name: tripId
           in: path
           required: true
+      tags:
+        - trip
+    put:
+      summary: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/trip.v1.yaml
+      description: edit a trip
+      operationId: editTrip
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/trip.v1.yaml
       tags:
         - trip
