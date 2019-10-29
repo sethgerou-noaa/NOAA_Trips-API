@@ -28,25 +28,6 @@ paths:
                   $ref: ./models/trip.v1.yaml
               examples: {}
       operationId: getTrips
-    post:
-      summary: ''
-      tags:
-        - trip
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ./models/trip.v1.yaml
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ./models/trip.v1.yaml
-        description: ''
-      description: create a new trip
-      operationId: createTrip
   '/trips/{tripId}':
     parameters: []
     get:
@@ -68,31 +49,3 @@ paths:
           name: tripId
           in: path
           required: true
-    put:
-      summary: ''
-      tags:
-        - trip
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ./models/trip.v1.yaml
-      description: edit a trip
-      operationId: editTrip
-      parameters:
-        - schema:
-            type: number
-          name: tripId
-          in: path
-          required: true
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ./models/trip.v1.yaml
-        description: updated trip
-components:
-  schemas: {}
-  securitySchemes: {}
