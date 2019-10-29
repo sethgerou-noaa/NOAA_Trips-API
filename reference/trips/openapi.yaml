@@ -61,12 +61,6 @@ paths:
               schema:
                 $ref: ./models/trip.v1.yaml
       description: get a specific trip
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties: {}
       operationId: getTrip
       parameters:
         - schema:
