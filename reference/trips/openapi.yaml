@@ -15,7 +15,6 @@ paths:
       summary: trips
       tags:
         - trips
-        - trip
       description: list all trips
       responses:
         '200':
@@ -28,12 +27,30 @@ paths:
                   $ref: ./models/trip.v1.yaml
               examples: {}
       operationId: getTrips
+    post:
+      summary: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/trip.v1.yaml
+              examples: {}
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: ./models/trip.v1.yaml
+      description: create trip
+      operationId: createTrip
+      tags:
+        - trips
   '/trips/{tripId}':
     parameters: []
     get:
       summary: 'trips/{tripId}'
-      tags:
-        - trip
       responses:
         '200':
           description: OK
@@ -49,3 +66,5 @@ paths:
           name: tripId
           in: path
           required: true
+      tags:
+        - trip
