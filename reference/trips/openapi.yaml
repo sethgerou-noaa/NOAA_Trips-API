@@ -17,11 +17,6 @@ paths:
         - trips
         - trip
       description: list all trips
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
       responses:
         '200':
           description: OK
