@@ -32,12 +32,6 @@ paths:
                 items:
                   $ref: ./models/trip.v1.yaml
               examples: {}
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: ../common/models/error.v1.yaml
       operationId: getTrips
     post:
       summary: ''
@@ -50,12 +44,6 @@ paths:
             application/json:
               schema:
                 $ref: ./models/trip.v1.yaml
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: ../common/models/error.v1.yaml
       requestBody:
         content:
           application/json:
@@ -77,12 +65,6 @@ paths:
             application/json:
               schema:
                 $ref: ./models/trip.v1.yaml
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: ../common/models/error.v1.yaml
       description: get a specific trip
       requestBody:
         content:
@@ -108,12 +90,6 @@ paths:
             application/json:
               schema:
                 $ref: ./models/trip.v1.yaml
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: ../common/models/error.v1.yaml
       description: edit a trip
       operationId: editTrip
       requestBody:
