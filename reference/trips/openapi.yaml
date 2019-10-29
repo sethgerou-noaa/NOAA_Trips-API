@@ -1,0 +1,14 @@
+openapi: 3.0.0
+info:
+  title: Trips
+  version: '1.0'
+  description: Provides Unique Trip ID and Unique Friendly ID / Captures basic trip info
+  contact:
+    name: Seth Gerou
+    email: seth.gerou@noaa.gov
+    url: 'https://www.nwfsc.noaa.gov/'
+servers:
+  - url: 'http://localhost:3000'
+paths: {}
+components:
+  schemas: {}
